@@ -1,6 +1,6 @@
 import type { TCreateCandidateForm } from "@/Features/Candidate/types/candidate.type";
 import type { RootState } from "@/Redux/store";
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 import { toast } from "sonner";
 
 const initialState: TCreateCandidateForm = {
@@ -50,7 +50,7 @@ export const candidateSlice = createSlice({
     },
     createCandidate: (state) => {
       toast.success("Candidate created succesfully");
-      console.log(state);
+      console.log(current(state));
     },
   },
 });
